@@ -7,7 +7,8 @@
     "build": "tsc",
     "lint": "eslint 'src/**/*.{ts,js}'",
     "local": "ts-node-dev src/app.ts",
-    "start": "node dist/app.js"
+    "start": "node dist/app.js",
+    "start-db": "docker build -t stackoverfaux-db ./src/database && docker run -d -p 5432:5432 stackoverfaux-db"
   },
   "keywords": [],
   "author": "",

@@ -15,4 +15,5 @@ A simple Stack Overflow-like site backend.
 
    Update any environment variables that need to be changed for the local environment and ensure that all variables are defined.
 
-5. Run the development server with `npm run local`
+5. Run the database image with `npm run start-db`
+6. Run the development server with `npm run local`
