@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "incremental": true,
+    "target": "es2023",
+    "module": "commonJS",
+    "esModuleInterop": true,
+    "outDir": "dist",
+    "strict": true
+  }
+}
