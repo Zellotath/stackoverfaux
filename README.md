@@ -39,3 +39,17 @@ Currently there are no automated tests. Would like to add unit tests (using Jest
 ## Postman Collection
 
 There's a [Postman collection](/stackoverfaux-postman.json) for exercising the various implemented endpoints.
+
+# Next Steps
+
+- Tests and comments
+- Implement an `authenticate` middleware to check a token in the request header and add the user to the request object
+- Implement `authorizeFor` to actually check permissions
+  - Checks against the user associated with the request
+  - Can only delete/edit the things that you're the user who created it
+- Create a `changelog` schema with copies of the tables
+  - Whenever a change is made to any of the records, record the change in the changelog table
+  - This can be done with client extensions on the Prisma client configuration
+  - Make it a generic function so we don't have to rewrite the same "update changelog" methods for everything
+- Update the application logger to also log the request ID, which would be set by a middleware that generates a unique ID for each request
+- Use DataDog & Sentry or the like (add Winston transports, etc)
