@@ -1,0 +1,58 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url = env("DATABASE_URL")
+}
+
+model User {
+  id Int @id @default(autoincrement())
+  creation DateTime @default(now())
+  name String
+
+  answers Answer[]
+  comments Comment[]
+  questions Question[]
+}
+
+model Question {
+  id Int @id @default(autoincrement())
+  creation DateTime @default(now())
+  title String
+  body String
+  score Int
+
+  answers Answer[]
+  comments Comment[]
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId Int
+}
+
+model Answer {
+  id Int @id @default(autoincrement())
+  creation DateTime @default(now())
+  body String
+  score Int
+  accepted Boolean
+
+  comments Comment[]
+  question Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  questionId Int
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId Int
+}
+
+model Comment {
+  id Int @id @default(autoincrement())
+  creation DateTime @default(now())
+  body String
+
+  user User @relation(fields: [userId], references: [id])
+  userId Int
+  parentAnswerId Int?
+  parentAnswer Answer? @relation(fields: [parentAnswerId], references: [id], onDelete: Cascade)
+  parentQuestionId Int?
+  parentQuestion Question? @relation(fields: [parentQuestionId], references: [id], onDelete: Cascade)
+}
