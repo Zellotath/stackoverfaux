@@ -1,5 +1,7 @@
 import { Router } from 'express';
 import { questionsRouter } from './questions';
+import { answersRouter } from './answers';
+import { commentsRouter } from './comments';
 
 export const router = Router();
 

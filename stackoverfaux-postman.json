@@ -1,0 +1,399 @@
+{
+	"info": {
+		"_postman_id": "c8c65528-57a6-4e85-bb8c-95ed29b8c022",
+		"name": "Stack Overfaux",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39993929"
+	},
+	"item": [
+		{
+			"name": "Health Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/health",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Question",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/questions/1?includeComments=true",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"questions",
+						"1"
+					],
+					"query": [
+						{
+							"key": "includeComments",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Answers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/questions/68462879/answers?includeComments=true",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"questions",
+						"68462879",
+						"answers"
+					],
+					"query": [
+						{
+							"key": "includeComments",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Specific Answer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/questions/68462879/answers/68462942?includeComments=true",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"questions",
+						"68462879",
+						"answers",
+						"68462942"
+					],
+					"query": [
+						{
+							"key": "includeComments",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Comments for Answer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/questions/68462879/answers/68462942/comments",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"questions",
+						"68462879",
+						"answers",
+						"68462942",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Comment for Answer",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/questions/68462879/answers/68462942/comments/120995410",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"questions",
+						"68462879",
+						"answers",
+						"68462942",
+						"comments",
+						"120995410"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Comments for Question",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/questions/68462879/answers/68462942/comments",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"questions",
+						"68462879",
+						"answers",
+						"68462942",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Comment for Question",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/questions/68462879/comments/120995637",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"questions",
+						"68462879",
+						"comments",
+						"120995637"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Question",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/questions/1",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"questions",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Question",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": 1610174,\n    \"title\": \"Test Question\",\n    \"body\": \"Here's a test question.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/questions",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"questions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Answer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": 1610174,\n    \"body\": \"Here's a test answer.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/questions/68462879/answers",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"questions",
+						"68462879",
+						"answers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Accept Answer",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": 1610174,\n    \"body\": \"Here's a test answer.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/questions/68462879/answers/68462942/accept",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"questions",
+						"68462879",
+						"answers",
+						"68462942",
+						"accept"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Unaccept Answer",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": 1610174,\n    \"body\": \"Here's a test answer.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/questions/68462879/answers/68462942/accept",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"questions",
+						"68462879",
+						"answers",
+						"68462942",
+						"accept"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Answer",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": 1610174,\n    \"body\": \"Here's a test answer.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/questions/68462879/answers/3",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"questions",
+						"68462879",
+						"answers",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Vote on Answer",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"direction\": \"down\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/questions/68462879/answers/68462942/vote",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"questions",
+						"68462879",
+						"answers",
+						"68462942",
+						"vote"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

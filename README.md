@@ -31,3 +31,11 @@ To make changes to the data model, update the Prisma [schema](/src/database/sche
 ## Seeding Data
 
 Data is seeded when `npm run start-db` or `npm run reset-db` is executed. Seed data can be found in the [/src/database/seed](/src/database/seed) directory. In it, there's a `seed.ts` script that executes commands against the database to populate it with seed data. The data comes from the [stackoverfaux.json](/src/database/seed/stackoverfaux.json) file in that directory.
+
+# Testing
+
+Currently there are no automated tests. Would like to add unit tests (using Jest, for example) and e2e tests once there's a UI (using Cypress). For now it's a TODO.
+
+## Postman Collection
+
+There's a [Postman collection](/stackoverfaux-postman.json) for exercising the various implemented endpoints.
