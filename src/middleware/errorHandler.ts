@@ -3,7 +3,7 @@ import { AuthorizationError } from '../common/errors/AuthorizationError';
 import { UnauthorizedError } from '../common/errors/UnauthorizedError';
 import { NotFoundError } from '../common/errors/NotFoundError';
 
-export async function errorHandler(err: Error, req: Request, res: Response, next: NextFunction) {
+export function errorHandler(err: Error, req: Request, res: Response, next: NextFunction): void {
   if (err instanceof UnauthorizedError) {
     res.sendStatus(401);
   } else if (err instanceof AuthorizationError) {

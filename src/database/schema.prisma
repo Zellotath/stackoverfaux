@@ -26,7 +26,7 @@ model Question {
 
   answers Answer[]
   comments Comment[]
-  user User @relation(fields: [userId], references: [id])
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId Int
 }
 
@@ -38,9 +38,9 @@ model Answer {
   accepted Boolean
 
   comments Comment[]
-  question Question @relation(fields: [questionId], references: [id])
+  question Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
   questionId Int
-  user User @relation(fields: [userId], references: [id])
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId Int
 }
 
@@ -52,7 +52,7 @@ model Comment {
   user User @relation(fields: [userId], references: [id])
   userId Int
   parentAnswerId Int?
-  parentAnswer Answer? @relation(fields: [parentAnswerId], references: [id])
+  parentAnswer Answer? @relation(fields: [parentAnswerId], references: [id], onDelete: Cascade)
   parentQuestionId Int?
-  parentQuestion Question? @relation(fields: [parentQuestionId], references: [id])
+  parentQuestion Question? @relation(fields: [parentQuestionId], references: [id], onDelete: Cascade)
 }
